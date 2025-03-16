@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Snake</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+        }
+
+        .game-container {
+            position: relative;
+        }
+
+        canvas {
+            border: 2px solid #4ecca3;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(78, 204, 163, 0.3);
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .game-info {
+            display: flex;
+            justify-content: space-between;
+            width: 400px;
+            margin-bottom: 20px;
+        }
+
+        .score, .high-score {
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(78, 204, 163, 0.5);
+        }
+
+        .game-over {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background: rgba(26, 26, 46, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #4ecca3;
+        }
+
+        .game-over h2 {
+            color: #4ecca3;
+            margin: 0 0 20px 0;
+        }
+
+        .restart-btn {
+            background: #4ecca3;
+            border: none;
+            padding: 10px 20px;
+            color: #1a1a2e;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .restart-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .controls {
+            margin-top: 20px;
+            text-align: center;
+            color: #4ecca3;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-info">
+        <div class="score">Score: 0</div>
+        <div class="high-score">High Score: 0</div>
+    </div>
+    <div class="game-container">
+        <canvas id="gameCanvas"></canvas>
+        <div class="game-over">
+            <h2>Game Over!</h2>
+            <p>Final Score: <span class="final-score">0</span></p>
+            <button class="restart-btn">Play Again</button>
+        </div>
+    </div>
+    <div class="controls">
+        Use Arrow Keys or WASD to move
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
